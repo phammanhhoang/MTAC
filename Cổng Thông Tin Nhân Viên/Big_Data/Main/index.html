@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cổng Thông Tin Nhân Viên</title>
+  <link rel="stylesheet" href="/Big_Data/Main/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="main">
+  <header>
+    <div class="header">
+      <div class="header-container">
+        
+        <div class="header-logo">
+          <img src="/img/logo_MTAC_01.svg" alt="Logo Á Châu" />
+        </div>
+  
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Nhân sự</a></li>
+            <li><a href="#"><i class="fas fa-user-plus"></i> Tuyển dụng</a></li>
+            <li><a href="#"><i class="fas fa-file-alt"></i> Tài liệu</a></li>
+            <li><a href="#"><i class="fas fa-headset"></i> Hỗ trợ IT</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> Thông báo</a></li>
+            <li class="dropdown" id="accountDropdown">
+              <a href="javascript:void(0);"><i class="fas fa-user"></i> Tài khoản</a>
+              <ul class="dropdown-menu" id="accountMenu">
+                <li><a href="#">Thông tin cá nhân</a></li>
+                <li><a href="#">Đổi mật khẩu</a></li>
+                <li><a href="/Big_Data/Login/logout.html">Đăng xuất</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </nav>
+  
+        <div class="header-extras">
+          <div class="header-search">
+            <input type="text" id="topSearchInput" placeholder="Tìm kiếm...">
+            <button onclick="searchTopMenu()"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="language-dropdown">
+            <button class="language-toggle">
+              <span>VN</span> <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="language-menu">
+              <li><a href="#"><img src="/img/flag_vn_1.png" alt="VN"> Tiếng Việt</a></li>
+              <li><a href="#"><img src="/img/flag_en_1.png" alt="EN"> English</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="nav-login">
+          <a href="/Big_Data/Login/login.html"><i class="fas fa-right-to-bracket"></i> HOÀNG</a>
+        </div>
+  
+      </div>
+    </div>
+  </header>
+  
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb-left"></div>
+    <div class="breadcrumb-right">
+      <a href="#">Trang chủ</a> &gt; <a href="#">Cổng thông tin nhân viên</a>
+    </div>
+  </div>
+
+  <section>
+    <div class="section">
+      <div class="subnav">
+        <ul class="subnav-list">
+          <li><a href="/Big_Data/Recruitment/index.html">TUYỂN DỤNG</a></li>
+          <li><a href="#">HỒ SƠ NHÂN SỰ</a></li>
+          <li><a href="#">THÔNG TIN NHÂN VIÊN</a></li>
+        </ul>
+      </div>
+
+      <div class="main-content-wrapper">
+        <div class="info-sidebar">
+          <div class="info-section">
+            <h3><i class="fa-solid fa-briefcase"></i> Tuyển dụng</h3>
+            <p>- Tổng hồ sơ ứng viên: <strong>120</strong></p>
+            <p>- Đã duyệt CV: <strong>85</strong></p>
+            <p>- Đang phỏng vấn: <strong>10</strong></p>
+            <p>- Đã nhận việc: <strong>5</strong></p>
+          </div>
+        
+          <div class="info-section">
+            <h3><i class="fa-solid fa-users"></i> Hồ sơ nhân sự</h3>
+            <p>- Nhân sự nội bộ: <strong>76</strong></p>
+            <p>- Nhân sự ngoài: <strong>8</strong></p>
+            <p>- Hợp đồng còn hiệu lực: <strong>72</strong></p>
+            <p>- Quyết định bổ nhiệm mới: <strong>3</strong></p>
+          </div>
+        
+          <div class="info-section">
+            <h3><i class="fa-solid fa-user-check"></i> Quản lý cá nhân</h3>
+            <p>- Hồ sơ cá nhân đầy đủ: <strong>66</strong></p>
+            <p>- Ngày phép còn lại: <strong>6</strong> ngày</p>
+            <p>- Tài sản đang dùng: <strong>2 thiết bị</strong></p>
+            <p>- Lần cập nhật gần nhất: <strong>01/05/2025</strong></p>
+          </div>
+        </div>
+        
+        <!-- <div class="sidebar">       
+          <div class="sidebar-group">
+            <div class="sidebar-title">Tuyển dụng</div>
+            <ul>
+              <li><a href="#">Hồ sơ ứng viên</a></li>
+              <li><a href="#">Đề xuất tuyển dụng</a></li>
+              <li><a href="#">Kế hoạch tuyển dụng</a></li>
+              <li><a href="#">Lịch phỏng vấn</a></li>
+              <li><a href="#">Đánh giá ứng viên</a></li>
+              <li><a href="#">Báo cáo tổng hợp</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <div class="sidebar-title">Hồ sơ nhân sự</div>
+            <ul>
+              <li><a href="#">Thông tin nhân sự nội bộ</a></li>
+              <li><a href="#">Thông tin nhân sự bên ngoài</a></li>
+              <li><a href="#">Chi tiết thông tin nhân viên</a></li>
+              <li><a href="#">Hợp đồng lao động</a></li>
+              <li><a href="#">Quyết định</a></li>
+              <li><a href="#">Báo cáo</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <div class="sidebar-title">Quản lý cá nhân</div>
+            <ul>
+              <li><a href="#">Thông tin nhân viên</a></li>
+              <li><a href="#">Công việc - Hợp đồng - Quá trình làm việc</a></li>
+              <li><a href="#">Nghỉ phép - Công tác - Chấm công</a></li>
+              <li><a href="#">Báo cáo công việc</a></li>
+              <li><a href="#">Tài sản & Đồng phục</a></li>
+              <li><a href="#">Tiêm chủng & Thông tin y tế</a></li>
+              <li><a href="#">Thông tin gia đình & Chính trị</a></li>
+              <li><a href="#">Liên hệ khẩn cấp</a></li>
+            </ul>
+          </div>
+        </div> -->
+
+          <div class="info-card">
+            <i class="fas fa-user-tie icon"></i>
+            <h4>Tuyển dụng</h4>
+            <ul>
+              <li>Hồ sơ ứng viên</li>
+              <li>Đề xuất tuyển dụng</li>
+              <li>Kế hoạch tuyển dụng</li>
+              <li>Lịch phỏng vấn</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-users icon"></i>
+            <h4>Hồ sơ nhân sự</h4>
+            <ul>
+              <li>Thông tin nội bộ</li>
+              <li>Chi tiết nhân viên</li>
+              <li>Hợp đồng lao động</li>
+              <li>Quyết định</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-user-cog icon"></i>
+            <h4>Quản lý cá nhân</h4>
+            <ul>
+              <li>Thông tin cá nhân</li>
+              <li>Nghỉ phép - Công tác</li>
+              <li>Chấm công</li>
+              <li>Tiêm chủng - Y tế</li>
+            </ul>
+          </div>
+        </section> -->
+        
+        <div class="main-content">
+          <div class="dashboard-layout">
+            <div class="dashboard-left">
+              <div class="welcome-card">
+                <img src="/img/z6472208155129_a9eb76c155b2141af7fca1bddc920bee.jpg" class="avatar" />
+                <div>
+                  <h2>Xin chào, Phạm Mạnh Hoàng!</h2>
+                  <p>Chúc bạn làm việc hiệu quả</p>
+                </div>
+              </div>
+              <div class="stat-group">
+                <div class="stat-box"><div class="stat-title">Ngày công</div><div class="stat-value">22</div></div>
+                <div class="stat-box"><div class="stat-title">Phép còn lại</div><div class="stat-value">5</div></div>
+                <div class="stat-box"><div class="stat-title">Tình trạng hợp đồng</div><div class="stat-value">Thực tập sinh</div></div>
+              </div>
+                <div class="chart-box">
+                  <canvas id="staffChart"></canvas>
+                </div>
+
+
+              
+              
+            </div>
+            <div class="dashboard-right">
+              <div class="notifications-card">
+                <h3><i class="fas fa-bullhorn"></i> Tin tức </h3>
+                <div class="notifications-scroll">
+                  <ul>
+                    <li><a href="#">[05/05] Thông báo nghỉ lễ 30/4 - 1/5</a></li>
+                    <li><a href="#">[05/01] Thông báo nghỉ lễ sức khỏe</a></li>
+                    <li><a href="#">[05/06] Lịch họp phòng</a></li>
+                    <li><a href="#">[05/07] Sinh nhật nhân viên</a></li>
+                    <li><a href="#">[05/08] Đánh giá quý</a></li>
+                    <li><a href="#">[05/09] Công bố thưởng</a></li>
+                    <li><a href="#">[05/05] Thông báo nghỉ lễ 30/4 - 1/5</a></li>
+                    <li><a href="#">[05/01] Thông báo nghỉ lễ sức khỏe</a></li>
+                    <li><a href="#">[05/05] Thông báo nghỉ lễ 30/4 - 1/5</a></li>
+                    <li><a href="#">[05/01] Thông báo nghỉ lễ sức khỏe</a></li>
+                    <li><a href="#">[05/06] Lịch họp phòng</a></li>
+                    <li><a href="#">[05/07] Sinh nhật nhân viên</a></li>
+                    <li><a href="#">[05/08] Đánh giá quý</a></li>
+                    <li><a href="#">[05/09] Công bố thưởng</a></li>
+                    <li><a href="#">[05/05] Thông báo nghỉ lễ 30/4 - 1/5</a></li>
+                    <li><a href="#">[05/01] Thông báo nghỉ lễ sức khỏe</a></li>
+                  </ul>
+                  
+                </div>
+              </div>
+
+              <div class="notification-divider"></div> 
+
+              <div class="notifications-card">
+                <h3><i class="fas fa-bullhorn"></i> Thông báo tuyển dụng</h3>
+                <div class="notifications-scroll">
+                  <ul>
+                    <li><a href="#">[05/10] Tuyển dụng vị trí Nhân viên Hành chính - Văn phòng</a></li>
+                    <li><a href="#">[05/09] Tuyển dụng Chuyên viên Tuyển dụng tại TP. HCM</a></li>
+                    <li><a href="#">[05/08] Thực tập sinh Marketing – Không yêu cầu kinh nghiệm</a></li>
+                    <li><a href="#">[05/07] Tuyển dụng Nhân viên Kỹ thuật Bảo trì</a></li>
+                    <li><a href="#">[05/06] Tuyển dụng Gấp: Nhân viên Kế toán tổng hợp</a></li>
+                    <li><a href="#">[05/05] Tuyển dụng Nhân viên IT Helpdesk</a></li>
+                    <li><a href="#">[05/04] Tuyển dụng Lao động phổ thông – Xưởng tái chế</a></li>
+                    <li><a href="#">[05/03] Thông báo phỏng vấn vòng 2 – Chuyên viên môi trường</a></li>
+                  </ul>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="quick-access-row">
+            <div class="quick-card"><i class="fas fa-id-card"></i> Hồ sơ cá nhân</div>
+            <div class="quick-card"><i class="fas fa-calendar-day"></i> Nghỉ phép</div>
+            <div class="quick-card"><i class="fas fa-file-alt"></i> Báo cáo</div>
+            <div class="quick-card"><i class="fas fa-coins"></i> Tra cứu lương</div>
+            <div class="quick-card"><i class="fas fa-graduation-cap"></i> Đào tạo</div>
+            <div class="quick-card"><i class="fas fa-comment-dots"></i> Góp ý</div>
+            <div class="quick-card"><i class="fas fa-clock"></i> Chấm công</div>
+            <div class="quick-card"><i class="fas fa-headset"></i> Hỗ trợ IT</div>
+            <div class="quick-card"><i class="fas fa-laptop"></i> Quản lý tài sản</div>
+            <div class="quick-card"><i class="fas fa-chart-line"></i> Đánh giá hiệu suất</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-column">
+        <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+        <p>Hotline: <strong>1900 545450</strong> (909đ/phút) - <strong>033 8351122</strong> (Zalo)</p>
+        <p>Góp ý CLDV: <strong>033 9751122</strong> - <strong>0972 851122</strong></p>
+        <p>Văn phòng phục vụ miền Bắc: 033 8351122</p>
+        <p>Văn phòng phục vụ miền Trung – Tây Nguyên: 0902 450585</p>
+        <p>Văn phòng phục vụ TP. HCM – miền Đông: 033 8351122</p>
+        <p>Văn phòng phục vụ miền Tây: 0902 912586</p>
+        <p>Contact us (English): (+84)362851122 (Whatsapp, Viber)</p>
+        <p><a href="#">Xem tất cả văn phòng, chi nhánh</a></p>
+      </div>
+  
+      <div class="footer-column">
+        <h3>VỀ CHÚNG TÔI</h3>
+        <ul>
+          <li><a href="#">Chiến lược phát triển</a></li>
+          <li><a href="#">Giá Trị Cốt Lõi</a></li>
+          <li><a href="#">Hình thành và phát triển</a></li>
+          <li><a href="#">Hồ sơ năng lực</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>LĨNH VỰC HOẠT ĐỘNG</h3>
+        <ul>
+          <li><a href="#">Phế liệu</a></li>
+          <li><a href="#">Chất thải</a></li>
+          <li><a href="#">Tái chế</a></li>
+          <li><a href="#">Tư vấn môi trường</a></li>
+          <li><a href="#">Xử lý nước</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>THEO DÕI CHÚNG TÔI</h3>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i> Facebook</li>
+          <li><i class="fas fa-comment-dots"></i> Zalo Officials</li>
+          <li><i class="fab fa-youtube"></i> Youtube</li>
+          <li><i class="fab fa-linkedin"></i> Linkedin</li>
+          <li><i class="fab fa-apple"></i> MTAC+ (iOS)</li>
+          <li><i class="fab fa-google-play"></i> MTAC+ (Android)</li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h3>LƯỢT TRUY CẬP</h3>
+        <p><i class="fas fa-users"></i> Online : 214</p>
+        <p><i class="fas fa-chart-bar"></i> Lượt truy cập : 5.249.921</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Copyright © CÔNG TY TNHH MTV SX TM DV MÔI TRƯỜNG Á CHÂU
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/Big_Data/Main/script.js"></script>
+</div>
+</body>
+</html>
+  

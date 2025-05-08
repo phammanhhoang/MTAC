@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuyển dụng</title>
+  <link rel="stylesheet" href="/Big_Data/Recruitment/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="main">
+
+    <header>
+      <div class="header">
+        <div class="header-container">
+          <div class="header-logo">
+            <img src="/img/logo_MTAC_01.svg" alt="Logo Á Châu" />
+          </div>
+          <div class="header-nav">
+            <div class="nav-title">
+              <a href="/Big_Data/Main/index.html">CỔNG THÔNG TIN NHÂN VIÊN</a>
+            </div>
+            <div class="nav-list">
+              <ul>
+                <li><a href="#"><i class="fas fa-user-tie"></i> Tuyển dụng</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="header-extras">
+            <div class="header-search">
+              <input type="text" id="topSearchInput" placeholder="Tìm kiếm..." />
+              <button onclick="searchTopMenu()"><i class="fas fa-search"></i></button>
+            </div>
+            <a href="#" class="header-icon"><i class="fas fa-bars"></i></a>
+            <div class="language-dropdown">
+              <button class="language-toggle"><span>VN</span> <i class="fas fa-chevron-down"></i></button>
+              <ul class="language-menu">
+                <li><a href="#"><img src="/img/flag_vn_1.png" alt="VN"> Tiếng Việt</a></li>
+                <li><a href="#"><img src="/img/flag_en_1.png" alt="EN"> English</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-login">
+            <a href="/Big_Data/Login/login.html"><i class="fas fa-right-to-bracket"></i> HOÀNG</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="breadcrumb-bar">
+      <div class="breadcrumb-left"></div>
+      <div class="breadcrumb-right">
+        <a href="#">Trang chủ</a> &gt; <a href="#">Cổng thông tin nhân viên</a>
+      </div>
+    </div>
+
+    <section>
+        <div class="section">
+            <div class="subnav">
+                <ul class="subnav-list">
+                  <li><a href="#candidate-section">Hồ sơ ứng viên</a></li>
+                  <li><a href="#proposal-section">Đề xuất tuyển dụng</a></li>
+                  <li><a href="#plan-section">Kế hoạch tuyển dụng</a></li>
+                  <li><a href="#interview-section">Lịch phỏng vấn</a></li>
+                  <li><a href="#evaluation-section">Đánh giá ứng viên</a></li>
+                  <li><a href="#summary-section">Báo cáo tổng hợp</a></li>
+                </ul>
+            </div>
+<section id="candidate-section" class="candidate-section">
+    <div class="table-responsive">
+      <table class="candidate-table">
+        <thead>
+          <tr>
+            <th>Hồ sơ ứng viên</th>
+            <th>Tổng (Tất cả)</th>
+            <th>Ứng tuyển</th>
+            <th>Phỏng vấn</th>
+            <th>Thư mời</th>
+            <th>Xác nhận PV</th>
+            <th>Trúng tuyển</th>
+            <th>Trạng thái HCNS</th>
+            <th>CV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nguyễn Văn A</td>
+            <td>
+              Phòng HCNS<br>
+              + Ngày: 01/05/2025<br>
+              + Email: nguyenvana@example.com<br>
+              + ĐT: 0912345678<br>
+              + Ngày sinh: 01/01/1995<br>
+              + Chuyên ngành: Quản trị NS<br>
+              + Trường: ĐH Kinh tế Quốc dân<br>
+              + Nguồn: Website<br>
+              + Ghi chú: –
+            </td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>ĐỦ HS</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+
+          </tr>
+          <tr>
+            <td>Trần Thị B</td>
+            <td>
+              Phòng CT<br>
+              + Ngày: 02/05/2025<br>
+              + Email: tranthib@example.com<br>
+              + ĐT: 0987654321<br>
+              + Ngày sinh: 12/02/1996<br>
+              + Chuyên ngành: Tài chính<br>
+              + Trường: ĐH Ngoại thương<br>
+              + Nguồn: LinkedIn<br>
+              + Ghi chú: Ưu tiên nữ
+            </td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>THIẾU HS</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Lê Văn C</td>
+            <td>
+              Phòng TV<br>
+              + Ngày: 03/05/2025<br>
+              + Email: le.vanc@example.com<br>
+              + ĐT: 0901122334<br>
+              + Ngày sinh: 23/03/1994<br>
+              + Chuyên ngành: Luật<br>
+              + Trường: ĐH Luật Hà Nội<br>
+              + Nguồn: Referral<br>
+              + Ghi chú: –
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>CHƯA NHẬN</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Phạm Thị D</td>
+            <td>
+              Phòng Kế toán<br>
+              + Ngày: 04/05/2025<br>
+              + Email: phamthid@example.com<br>
+              + ĐT: 0933221554<br>
+              + Ngày sinh: 15/04/1997<br>
+              + Chuyên ngành: Kế toán<br>
+              + Trường: ĐH Kinh tế TP.HCM<br>
+              + Nguồn: Job Fair<br>
+              + Ghi chú: 2 năm kinh nghiệm
+            </td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>THIẾU HS</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Hoàng Văn E</td>
+            <td>
+              Phòng CNTT<br>
+              + Ngày: 05/05/2025<br>
+              + Email: hoangvane@example.com<br>
+              + ĐT: 0911222334<br>
+              + Ngày sinh: 30/05/1998<br>
+              + Chuyên ngành: CNTT<br>
+              + Trường: FPT<br>
+              + Nguồn: Facebook<br>
+              + Ghi chú: –
+            </td>
+            <td>✔</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>CHƯA NHẬN</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Đỗ Thị F</td>
+            <td>
+              Phòng KTH nước<br>
+              + Ngày: 06/05/2025<br>
+              + Email: dothif@example.com<br>
+              + ĐT: 0944556677<br>
+              + Ngày sinh: 05/06/1995<br>
+              + Chuyên ngành: Kỹ thuật MT<br>
+              + Trường: ĐH Bách Khoa<br>
+              + Nguồn: Email<br>
+              + Ghi chú: CV đầy đủ
+            </td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>ĐỦ HS</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Vũ Văn G</td>
+            <td>
+              Phòng Tái chế<br>
+              + Ngày: 07/05/2025<br>
+              + Email: vuvang@example.com<br>
+              + ĐT: 0977889900<br>
+              + Ngày sinh: 10/07/1993<br>
+              + Chuyên ngành: Tái chế<br>
+              + Trường: ĐH Mỏ Địa chất<br>
+              + Nguồn: Website<br>
+              + Ghi chú: –
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>CHƯA NHẬN</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Bùi Thị H</td>
+            <td>
+              Phòng Thực tập<br>
+              + Ngày: 08/05/2025<br>
+              + Email: buih@example.com<br>
+              + ĐT: 0966334455<br>
+              + Ngày sinh: 20/08/1999<br>
+              + Chuyên ngành: Marketing<br>
+              + Trường: ĐH KHXH & NV<br>
+              + Nguồn: Referral<br>
+              + Ghi chú: Mới tốt nghiệp
+            </td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>ĐỦ HS</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Lý Văn I</td>
+            <td>
+              Phòng HCNS<br>
+              + Ngày: 09/05/2025<br>
+              + Email: lyvani@example.com<br>
+              + ĐT: 0955443322<br>
+              + Ngày sinh: 12/09/1994<br>
+              + Chuyên ngành: Nhân sự<br>
+              + Trường: ĐH Lao động<br>
+              + Nguồn: Facebook<br>
+              + Ghi chú: –
+            </td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>THIẾU HS</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+          <tr>
+            <td>Đặng Thị K</td>
+            <td>
+              Phòng CNTT<br>
+              + Ngày: 10/05/2025<br>
+              + Email: dangthik@example.com<br>
+              + ĐT: 0988776655<br>
+              + Ngày sinh: 25/10/1996<br>
+              + Chuyên ngành: CNTT<br>
+              + Trường: ĐH Công nghệ<br>
+              + Nguồn: LinkedIn<br>
+              + Ghi chú: Ưu tiên ngoại ngữ
+            </td>
+            <td>✔</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>CHƯA NHẬN</td>
+            <td><a href="/img/CV Phạm Mạnh Hoàng.pdf" target="_blank">Xem CV</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+        </div>
+    </section>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-column">
+          <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+          <p>Hotline: <strong>1900 545450</strong> (909đ/phút) - <strong>033 8351122</strong> (Zalo)</p>
+          <p>Góp ý CLDV: <strong>033 9751122</strong> - <strong>0972 851122</strong></p>
+          <p>Văn phòng phục vụ miền Bắc: 033 8351122</p>
+          <p>Văn phòng phục vụ miền Trung – Tây Nguyên: 0902 450585</p>
+          <p>Văn phòng phục vụ TP. HCM – miền Đông: 033 8351122</p>
+          <p>Văn phòng phục vụ miền Tây: 0902 912586</p>
+          <p>Contact us (English): (+84)362851122 (Whatsapp, Viber)</p>
+          <p><a href="#">Xem tất cả văn phòng, chi nhánh</a></p>
+        </div>
+        <div class="footer-column">
+          <h3>VỀ CHÚNG TÔI</h3>
+          <ul>
+            <li><a href="#">Chiến lược phát triển</a></li>
+            <li><a href="#">Giá Trị Cốt Lõi</a></li>
+            <li><a href="#">Hình thành và phát triển</a></li>
+            <li><a href="#">Hồ sơ năng lực</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>LĨNH VỰC HOẠT ĐỘNG</h3>
+          <ul>
+            <li><a href="#">Phế liệu</a></li>
+            <li><a href="#">Chất thải</a></li>
+            <li><a href="#">Tái chế</a></li>
+            <li><a href="#">Tư vấn môi trường</a></li>
+            <li><a href="#">Xử lý nước</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>THEO DÕI CHÚNG TÔI</h3>
+          <ul>
+            <li><i class="fab fa-facebook-f"></i> Facebook</li>
+            <li><i class="fas fa-comment-dots"></i> Zalo Officials</li>
+            <li><i class="fab fa-youtube"></i> Youtube</li>
+            <li><i class="fab fa-linkedin"></i> Linkedin</li>
+            <li><i class="fab fa-apple"></i> MTAC+ (iOS)</li>
+            <li><i class="fab fa-google-play"></i> MTAC+ (Android)</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>LƯỢT TRUY CẬP</h3>
+          <p><i class="fas fa-users"></i> Online: 214</p>
+          <p><i class="fas fa-chart-bar"></i> Lượt truy cập: 5.249.921</p>
+        </div>
+      </div>
+      <div class="footer-bottom">Copyright © CÔNG TY TNHH MTV SX TM DV MÔI TRƯỜNG Á CHÂU</div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
