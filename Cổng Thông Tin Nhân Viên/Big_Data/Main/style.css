@@ -70,7 +70,7 @@ li {
   display: flex;
   align-items: center;
   flex: 1;
-  margin-left: 123px;
+  margin-left: 250px;
 }
 
 .nav-title {
@@ -449,7 +449,7 @@ li {
 
 .progress-bar .fill {
   height: 100%;
-  width: 0; /* JavaScript/inline style sẽ ghi đè thành % thực tế */
+  width: 0; 
   background-color: #086db5;
   transition: width 0.5s ease-in-out;
 }
@@ -464,7 +464,8 @@ li {
 .main-content {
   padding: 20px;
   flex: 1;
-  background-color: #ececec;
+  background-color: #e6e6e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);                           
 }
 
 .dashboard-layout {
