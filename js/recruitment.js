@@ -1,62 +1,100 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Tài khoản dropdown
+// js/recruitment.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  // === 1. Account dropdown ===
   const accountDropdown = document.getElementById('accountDropdown');
-  const accountMenu = document.getElementById('accountMenu');
+  const accountMenu     = document.getElementById('accountMenu');
 
-  accountDropdown.addEventListener('click', function (e) {
+  accountDropdown.addEventListener('click', e => {
     e.stopPropagation();
-    accountMenu.style.display = accountMenu.style.display === 'block' ? 'none' : 'block';
+    accountMenu.style.display =
+      (accountMenu.style.display === 'block' ? 'none' : 'block');
   });
 
-  // Ngôn ngữ dropdown
-  const languageToggle = document.querySelector('.language-toggle');
-  const languageMenu = document.querySelector('.language-menu');
-
-  languageToggle.addEventListener('click', function (e) {
-    e.stopPropagation();
-    languageMenu.style.display = languageMenu.style.display === 'block' ? 'none' : 'block';
-    this.parentElement.classList.toggle('open');
-  });
-
-  document.addEventListener('click', function () {
+  // === 2. Close account menu on outside click ===
+  document.addEventListener('click', () => {
     accountMenu.style.display = 'none';
-    languageMenu.style.display = 'none';
-    document.querySelector('.language-dropdown').classList.remove('open');
   });
 
-  accountMenu.addEventListener('click', function (e) {
+  // === 3. Sidebar toggle (collapse / expand) ===
+  const sidebar   = document.querySelector('.sidebar');
+  const toggleBtn = document.querySelector('.sidebar .toggle-btn');
+
+  toggleBtn.addEventListener('click', e => {
     e.stopPropagation();
-  });
+    sidebar.classList.toggle('collapsed');
 
-  languageMenu.addEventListener('click', function (e) {
-    e.stopPropagation();
-  });
-});
-
-// Sidebar toggle
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("collapsed");
-}
-
-// Hiển thị section tương ứng
-document.addEventListener('DOMContentLoaded', function () {
-  const menuItems = document.querySelectorAll('.menu li');
-
-  menuItems.forEach(item => {
-    item.addEventListener('click', function () {
-      const sectionName = this.getAttribute('data-section');
-      showSection(sectionName);
-    });
-  });
-});
-
-function showSection(sectionName) {
-  const sections = document.querySelectorAll('.content-section');
-  sections.forEach(section => {
-    section.classList.remove('active');
-    if (section.dataset.section === sectionName) {
-      section.classList.add('active');
+    // đổi icon & text
+    const icon = toggleBtn.querySelector('i');
+    const txt  = toggleBtn.querySelector('span');
+    if (sidebar.classList.contains('collapsed')) {
+      icon.classList.replace('fa-angle-left', 'fa-angle-right');
+      txt.textContent = '';
+    } else {
+      icon.classList.replace('fa-angle-right', 'fa-angle-left');
+      txt.textContent = 'Thu gọn';
     }
   });
-}
 
+  // === 4. Submenu toggle (nếu có) ===
+  document.querySelectorAll('.sidebar .menu li').forEach(item => {
+    const sub = item.querySelector('.submenu');
+    if (!sub) return;
+    item.addEventListener('click', e => {
+      e.stopPropagation();
+      item.classList.toggle('active');
+    });
+  });
+
+
+document.querySelectorAll('.sidebar .menu li').forEach(item => {
+  item.addEventListener('click', e => {
+    // 1) active menu
+    document.querySelectorAll('.sidebar .menu li')
+      .forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+
+    // 2) show content
+    const name = item.dataset.section;
+    document.querySelectorAll('.content-section')
+      .forEach(sec => sec.classList.remove('active'));
+    const target = document.querySelector(`.content-section[data-section="${name}"]`);
+    if (target) target.classList.add('active');
+  });
+});
+
+  // === 5. Language switcher (pill + cờ) ===
+  const switcher = document.querySelector('.language-switcher');
+  if (switcher) {
+    const btn  = switcher.querySelector('.lang-btn');
+    const menu = switcher.querySelector('.lang-menu');
+
+    // bật / tắt dropdown
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      switcher.classList.toggle('open');
+    });
+
+    // click ngoài đóng menu
+    document.addEventListener('click', () => {
+      switcher.classList.remove('open');
+    });
+
+    // chọn ngôn ngữ
+    menu.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', e => {
+        e.stopPropagation();
+        const flagSrc = li.querySelector('.flag').getAttribute('src');
+        const label   = li.textContent.trim();
+
+        // cập nhật lại button
+        switcher.querySelector('.lang-btn .flag').src    = flagSrc;
+        switcher.querySelector('.lang-btn .label').textContent = label;
+        switcher.classList.remove('open');
+
+        // TODO: reload hoặc gọi API chuyển ngôn ngữ
+        // window.location.href = '/?lang=' + li.dataset.lang;
+      });
+    });
+  }
+});

@@ -15,19 +15,19 @@
       <div class="header">
         <div class="header-container">
           <div class="header-logo">
-            <img src="/assets/image/header/logo_MTAC_01.svg" alt="Logo Á Châu" />
+            <img src="assets/image/header/logo_MTAC_01.svg" alt="Logo Á Châu" />
           </div>
           <div class="header-title">
             <a href="">PHẦN MỀM NHÂN SỰ</a>
           </div>
           <nav class="header-nav">
             <ul class="nav-list">
-              <li><a href="#"><i class="fas fa-briefcase"></i> Tuyển dụng</a></li>
-              <li><a href="#"><i class="fas fa-users"></i> Nhân sự</a></li>
-              <li><a href="#"><i class="fas fa-user"></i> Nhân viên</a>
-              </li>
+              <li><a href="#"><i class="fas fa-chart-bar"></i> Thống kê</a></li>
+              <li><a href="#"><i class="fas fa-file-alt"></i> Báo cáo</a></li>
+              <li><a href="#"><i class="fas fa-envelope"></i> Tin nhắn</a></li>
             </ul>
           </nav>
+
           <div class="header-extras">
             <div class="header-search">
               <input type="text" id="topSearchInput" placeholder="Tìm kiếm...">
@@ -56,7 +56,7 @@
               <span class="username"></span></a>
             <ul class="dropdown-menu" id="accountMenu">
               <li><a href="#">Đổi mật khẩu</a></li>
-              <li><a href="pages/login.html">Đăng xuất</a></li>
+              <li><a href="login.html">Đăng xuất</a></li>
             </ul>
           </div>
         </div>
@@ -74,18 +74,19 @@
         <div class="main-content-wrapper">
           <section class="dashboard-section">
             <aside class="sidebar">
-              <button type="button" class="sidebar-toggle">
-                <i class="fas fa-angle-double-left"></i>
-                <span class="toggle-text">Thu gọn</span>
+              <button class="toggle-btn">
+                <i class="fas fa-angle-left"></i>
+                <span>Thu gọn</span>
               </button>
+
               <ul class="sidebar-menu">
                 <li class="menu-item">
-                  <div class="menu-header">
+                  <a href="recruitment.html" class="menu-header">
                     <i class="fas fa-briefcase"></i>
                     <span>Tuyển dụng</span>
-                  </div>
+                  </a>
                   <ul class="submenu">
-                    <li><a href="#ho-so-ung-vien"><i class="fas fa-file-invoice"></i><span>Hồ sơ ứng viên</span></a>
+                    <li><a href="recruitment.html"><i class="fas fa-file-invoice"></i><span>Hồ sơ ứng viên</span></a>
                     </li>
                     <li><a href="#de-xuat-tuyen-dung"><i class="fas fa-bullhorn"></i><span>Đề xuất tuyển dụng</span></a>
                     </li>
@@ -100,10 +101,10 @@
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <div class="menu-header">
+                  <a href="/ho-so-nhan-su" class="menu-header">
                     <i class="fas fa-briefcase"></i>
                     <span>Hồ sơ nhân sự</span>
-                  </div>
+                  </a>
                   <ul class="submenu">
                     <li><a href="#ns-noi-bo"><i class="fas fa-user-tie"></i><span>Nhân sự nội bộ</span></a></li>
                     <li><a href="#ns-ben-ngoai"><i class="fas fa-handshake"></i><span>Nhân sự bên ngoài</span></a></li>
@@ -115,10 +116,10 @@
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <div class="menu-header">
+                  <a href="/quan-ly-ca-nhan" class="menu-header">
                     <i class="fas fa-briefcase"></i>
                     <span>Quản lý cá nhân</span>
-                  </div>
+                  </a>
                   <ul class="submenu">
                     <li><a href="#thong-tin-co-ban"><i class="fas fa-id-card"></i><span>Thông tin cơ bản</span></a></li>
                     <li><a href="#lien-he"><i class="fas fa-phone"></i><span>Thông tin liên hệ</span></a></li>
@@ -139,7 +140,7 @@
 
             <div class="main-content">
               <div class="feature-grid">
-                <a href="#" class="feature-card">
+                <a href="recruitment.html" class="feature-card">
                   <i class="fas fa-briefcase"></i>
                   <span>Tuyển dụng</span>
                 </a>
