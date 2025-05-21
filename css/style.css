@@ -854,7 +854,9 @@ li {
     display: none;
   }
 
-
+  .nav-login .username {
+    display: none;
+  }
 
   .nav-login .avatar {
     width: 28px;
