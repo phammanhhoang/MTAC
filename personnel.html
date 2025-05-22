@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ nhân sự</title>
+    <link rel="stylesheet" href="css/personnel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="header">
+                <div class="header-container">
+                    <div class="header-logo">
+                        <img src="assets/image/header/logo_MTAC_01.svg" alt="Logo Á Châu" />
+                    </div>
+                    <div class="header-title">
+                        <a href="">PHẦN MỀM NHÂN SỰ</a>
+                    </div>
+                    <nav class="header-nav">
+                        <ul class="nav-list">
+                            <li><a href="#"><i class="fas fa-chart-bar"></i> Thống kê</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Báo cáo</a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> Tin nhắn</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-extras">
+                        <div class="header-search">
+                            <input type="text" id="topSearchInput" placeholder="Tìm kiếm...">
+                            <button onclick="searchTopMenu()"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="language-switcher">
+                            <button class="lang-btn">
+                                <img src="assets/image/header/flag_vn_1.png" alt="VN" class="flag">
+                                <span class="label">VN</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <ul class="lang-menu">
+                                <li data-lang="vn">
+                                    <img src="assets/image/header/flag_vn_1.png" alt="VN" class="flag"> VN
+                                </li>
+                                <li data-lang="en">
+                                    <img src="assets/image/header/flag_en_1.png" alt="EN" class="flag"> EN
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-login dropdown" id="accountDropdown">
+                        <a href="javascript:void(0);" class="account-toggle">
+                            <img src="assets/image/section/z6472208155129_a9eb76c155b2141af7fca1bddc920bee.jpg"
+                                alt="Hoàng" class="avatar">
+                            <span class="username"></span></a>
+                        <ul class="dropdown-menu" id="accountMenu">
+                            <li><a href="#">Đổi mật khẩu</a></li>
+                            <li><a href="login.html">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="breadcrumb-bar">
+            <div class="breadcrumb-left"></div>
+            <div class="breadcrumb-right">
+                <a href="#"></a> <i class="fas fa-id-card"></i> <a href="#">Hồ sơ nhân sự</a>
+            </div>
+        </div>
+
+        <section>
+            <div class="section">
+                <div class="main-content-wrapper">
+                    <div class="sidebar">
+                        <button class="toggle-btn" onclick="toggleSidebar()">
+                            <i class="fas fa-angle-left"></i>
+                            <span>Thu gọn</span>
+                        </button>
+                        <ul class="menu">
+                            <li class="active" data-section="applicant-files">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Tổng quan</span>
+                            </li>
+                            <li data-section="recruit-proposal">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Nhân sự nội bộ</span>
+                            </li>
+                            <li data-section="recruit-plan">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Nhân sự bên ngoài</span>
+                            </li>
+                            <li data-section="interview-schedule">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Quản lý hợp đồng</span>
+                            </li>
+                            <li data-section="candidate-evaluation">
+                                <i class="fas fa-user-check"></i>
+                                <span>Quyết định nhân sự</span>
+                            </li>
+                            <li data-section="recruit-report">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Báo cáo & Thống kê</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="main-content">
+                        <div class="content-section active" data-section="applicant-files">
+                            <div class="dashboard">
+                                <div class="dashboard-header">
+                                    <div class="dashboard-tabs">
+                                        <button class="active">Báo cáo</button>
+                                    </div>
+                                </div>
+                                <div class="dashboard-banner">
+                                    <div class="banner-text">
+                                        <h2>Xin chào <span class="username">Hoàng</span>,</h2>
+                                        <p>Bạn đang xem dữ liệu tổng quan về tình hình nhân sự của công ty.</p>
+                                    </div>
+                                    <div class="banner-illu">
+                                        <img src="assets/image/section/banner-illu.svg" alt="Illustration">
+                                    </div>
+                                </div>
+                                <div class="dashboard-main">
+                                    <!-- ==== Thẻ 3 card trên cùng ==== -->
+                                    <div class="dashboard-cards">
+                                        <div class="dashboard-card">
+                                            <h3>Nhân viên mới</h3>
+                                            <div class="value">8 <span class="delta">(+33.3%)</span></div>
+                                            <div class="period">Tuần này <i class="fas fa-chevron-down"></i></div>
+                                            <div class="previous">Tuần trước: 6</div>
+                                            <div class="sparkline-container">
+                                                <canvas id="sparkNV"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-card">
+                                        <h3>Thử việc thành công</h3>
+                                        <div class="value">5 <span class="delta">(+66.7%)</span></div>
+                                        <div class="period">Tuần này <i class="fas fa-chevron-down"></i></div>
+                                        <div class="previous">Tuần trước: 3</div>
+                                        <div class="sparkline-container">
+                                            <canvas id="sparkNV"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <h3>Nghỉ việc</h3>
+                                    <div class="value">2 <span class="delta">(-20.0%)</span></div>
+                                    <div class="period">Tuần này <i class="fas fa-chevron-down"></i></div>
+                                    <div class="previous">Tuần trước: 2.5</div>
+                                    <div class="sparkline-container">
+                                        <canvas id="sparkNV"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ==== Thẻ tổng số nhân viên ==== -->
+                        <div class="dashboard-stats">
+                            <h3>Tổng số nhân viên</h3>
+                            <div class="stats-count">30</div>
+                            <ul class="stats-list">
+                                <li><i class="fas fa-user-tie icon formal"></i><span>Chính
+                                        thức</span><span>15</span></li>
+                                <li><i class="fas fa-user-clock icon intern"></i><span>Thử
+                                        việc</span><span>7</span></li>
+                                <li><i class="fas fa-baby icon maternity"></i><span>Nghỉ thai
+                                        sản</span><span>2</span></li>
+                                <li><i class="fas fa-users icon others"></i><span>Khác</span><span>6</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ===== thêm 3 card trên cùng ===== -->
+                    <div class="dashboard-cards-2">
+                        <div class="card pie-card">
+                            <h3>Cơ cấu nhân sự theo phòng ban</h3>
+                            <div class="period">Tất cả đơn vị – Đến ngày 22/05/2025</div>
+                            <div class="chart-container">
+                                <canvas id="deptStructureChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="card pie-card">
+                            <h3>Thống kê hợp đồng theo loại</h3>
+                            <div class="period">Tất cả đơn vị – Đến ngày 22/05/2025</div>
+                            <div class="chart-container">
+                                <canvas id="contractTypeChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="card reminder-card">
+                            <h3>Nhắc việc</h3>
+                            <ul class="reminder-list">
+                                <li><span class="rem-text">Duyệt hợp đồng NV005</span><span
+                                        class="rem-due">25/05/2025</span></li>
+                                <li><span class="rem-text">Nhắc bổ sung hồ sơ NV012</span><span
+                                        class="rem-due">27/05/2025</span></li>
+                                <li><span class="rem-text">Họp đánh giá thử việc</span><span
+                                        class="rem-due">30/05/2025</span></li>
+                                <li><span class="rem-text">Gửi báo cáo tài chính Q2</span><span
+                                        class="rem-due">02/06/2025</span></li>
+                                <li><span class="rem-text">Nhắc nộp phiếu công tác tuần</span><span
+                                        class="rem-due">28/05/2025</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- ===== hai chart lớn phía dưới ===== -->
+                        <div class="dashboard-chart-row">
+                            <div class="chart-card">
+                                <h3>Biến động nhân sự</h3>
+                                <div class="period">Tất cả đơn vị – Năm 2025</div>
+                                <div class="chart-container">
+                                    <canvas id="staffMovementChart"></canvas>
+                                </div>
+                                <div class="legend">
+                                    <span><i class="fas fa-circle text-blue"></i> Tiếp nhận</span>
+                                    <span><i class="fas fa-circle text-red"></i> Nghỉ việc</span>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Số lượng nhân sự</h3>
+                                <div class="period">Tất cả đơn vị – Năm 2025</div>
+                                <div class="chart-container">
+                                    <canvas id="staffCountChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content-section" data-section="recruit-proposal">
+                    Nội dung 1
+                </div>
+                <div class="content-section" data-section="recruit-plan">
+                    Nội dung 2
+                </div>
+                <div class="content-section" data-section="interview-schedule">
+                    Nội dung 3
+                </div>
+                <div class="content-section" data-section="candidate-evaluation">
+                    Nội dung 4
+                </div>
+                <div class="content-section" data-section="recruit-report">
+                    Nội dung 5
+                </div>
+            </div>
+    </div>
+    </div>
+
+    </section>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-column">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <p>Hotline: <strong>1900 545450</strong> (909đ/phút) - <strong>033 8351122</strong> (Zalo)</p>
+                <p>Góp ý CLDV: <strong>033 9751122</strong> - <strong>0972 851122</strong></p>
+                <p>Văn phòng phục vụ miền Bắc: 033 8351122</p>
+                <p>Văn phòng phục vụ miền Trung – Tây Nguyên: 0902 450585</p>
+                <p>Văn phòng phục vụ TP. HCM – miền Đông: 033 8351122</p>
+                <p>Văn phòng phục vụ miền Tây: 0902 912586</p>
+                <p>Contact us (English): (+84)362851122 (Whatsapp, Viber)</p>
+                <p><a href="#">Xem tất cả văn phòng, chi nhánh</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>VỀ CHÚNG TÔI</h3>
+                <ul>
+                    <li><a href="#">Chiến lược phát triển</a></li>
+                    <li><a href="#">Giá Trị Cốt Lõi</a></li>
+                    <li><a href="#">Hình thành và phát triển</a></li>
+                    <li><a href="#">Hồ sơ năng lực</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>LĨNH VỰC HOẠT ĐỘNG</h3>
+                <ul>
+                    <li><a href="#">Phế liệu</a></li>
+                    <li><a href="#">Chất thải</a></li>
+                    <li><a href="#">Tái chế</a></li>
+                    <li><a href="#">Tư vấn môi trường</a></li>
+                    <li><a href="#">Xử lý nước</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>THEO DÕI CHÚNG TÔI</h3>
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i> Facebook</li>
+                    <li><i class="fas fa-comment-dots"></i> Zalo Officials</li>
+                    <li><i class="fab fa-youtube"></i> Youtube</li>
+                    <li><i class="fab fa-linkedin"></i> Linkedin</li>
+                    <li><i class="fab fa-apple"></i> MTAC+ (iOS)</li>
+                    <li><i class="fab fa-google-play"></i> MTAC+ (Android)</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>LƯỢT TRUY CẬP</h3>
+                <p><i class="fas fa-users"></i> Online: 214</p>
+                <p><i class="fas fa-chart-bar"></i> Lượt truy cập: 5.249.921</p>
+            </div>
+        </div>
+        <div class="footer-bottom">Copyright © CÔNG TY TNHH MTV SX TM DV MÔI TRƯỜNG Á CHÂU</div>
+    </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/personnel.js"></script>
+
+</body>
+
+</html>

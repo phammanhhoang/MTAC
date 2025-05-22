@@ -364,7 +364,7 @@ li {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #111827 0%, #b91c1c 100%);
+  background: #086db5;
 }
 
 /* --- Bố cục chính: sidebar + content --- */
@@ -438,10 +438,10 @@ li {
 }
 
 .toggle-btn {
-  margin: 16px;
+  margin: 12px;
   padding: 10px;
-  background-color: #4b5563;
-  color: #fff;
+  background-color: #4e93d1;
+  color: #ffffff;
   border: none;
   outline: none;
   display: flex;
@@ -461,13 +461,11 @@ li {
 }
 
 .toggle-btn:hover {
-  background-color: #374151;
+  background-color: #98b5e2;
 }
 
 .candidate-section {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+  padding: 5px;
 }
 
 .candidate-section h2 {
@@ -596,7 +594,6 @@ li {
   display: grid;
   grid-template-columns: 250px 1fr 250px;
   gap: 20px;
-  margin: 20px 0;
 }
 
 /* --- 1) FILTER PANEL --- */
