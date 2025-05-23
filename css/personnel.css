@@ -362,6 +362,7 @@ li {
 .main-content-wrapper {
   display: flex;
 }
+
 /* Cho toàn bộ content-section chiếm toàn bộ không gian còn lại khi sidebar co lại */
 .main-content-wrapper .content-section {
   /* flex items mặc định là flex: 0 1 auto, nên cần override để grow */
@@ -372,13 +373,15 @@ li {
 .main-content-wrapper .content-section.active {
   display: block;
 }
+
 .content-section.active {
   flex: 1 1 auto;
-  display: block; /* giữ nguyên */
+  display: block;
+  /* giữ nguyên */
 }
 
 .main-content {
-
+  margin: 15px;
   display: grid;
   grid-template-columns: 1fr 300px;
 
@@ -392,6 +395,7 @@ li {
 .content-section.active {
   display: block;
 }
+
 /* ba card chỉ số trên cùng */
 .content-section.active .dashboard {
   display: flex;
@@ -404,7 +408,7 @@ li {
   margin: 5px;
   height: 100%;
   display: flex;
-  gap: 2px;
+  gap: 20px;
 }
 
 
@@ -548,11 +552,12 @@ li {
 }
 
 .dashboard-stats {
+  margin-left: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  width: 294px;
+  width: 280px;
   grid-column: 2 / span 1;
   margin-top: 5px;
   background: #fff;
@@ -614,16 +619,43 @@ li {
 
 /* ==== CHUYỂN REM → PX CHO PIE + REMINDER ==== */
 /* chung cho tất cả .card */
+/* ==== Hover effect cho các chart-card và dashboard-card ==== */
+.dashboard-main .dashboard-card,
+.dashboard-cards-2 .chart-card {
+  /* thêm transition mượt mà */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-main .dashboard-card:hover,
+.dashboard-cards-2 .chart-card:hover {
+  /* nâng lên 4px */
+  transform: translateY(-4px);
+  /* đổ shadow đậm hơn */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Hover effect cho khối Tổng số nhân viên ==== */
+.dashboard-stats {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-stats:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
 .dashboard-cards-2 .card {
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 24px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .dashboard-cards-2 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 /* tiêu đề card */
 .dashboard-cards-2 .card h3 {
   font-size: 20px;
@@ -631,6 +663,7 @@ li {
   margin-bottom: 8px;
   font-weight: 600;
 }
+
 /* dòng phụ (period) */
 .dashboard-cards-2 .card .period {
   font-size: 14px;
@@ -641,24 +674,27 @@ li {
 /* chart-card */
 .dashboard-cards-2 .chart-card {
   background: var(--color-white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 16px;
   display: flex;
   flex-direction: column;
   height: 387px;
 }
+
 /* tiêu đề chart */
 .dashboard-cards-2 .chart-card h3 {
   font-size: 18px;
   color: var(--color-primary);
   margin-bottom: 6px;
 }
+
 /* dòng thời gian */
 .dashboard-cards-2 .chart-card .period {
   font-size: 14px;
   color: var(--color-muted);
   margin-bottom: 12px;
 }
+
 /* legend dưới chart */
 .dashboard-cards-2 .chart-card .legend {
   margin-top: 12px;
@@ -667,6 +703,7 @@ li {
   font-size: 14px;
   align-items: center;
 }
+
 /* === Reminder-card cải tiến === */
 .reminder-card {
   padding: 24px 20px;
@@ -699,16 +736,21 @@ li {
 }
 
 .rem-text {
-  flex: 1;                       /* chiếm hết không gian còn lại */
+  flex: 1;
+  /* chiếm hết không gian còn lại */
   font-weight: 500;
   color: #333;
-  margin-right: 16px;            /* khoảng cách đến ngày */
-  word-break: break-word;        /* xuống dòng nếu quá dài */
+  margin-right: 16px;
+  /* khoảng cách đến ngày */
+  word-break: break-word;
+  /* xuống dòng nếu quá dài */
 }
 
 .rem-due {
-  flex-shrink: 0;                /* không bị co lại */
-  white-space: nowrap;           /* luôn ở cùng dòng */
+  flex-shrink: 0;
+  /* không bị co lại */
+  white-space: nowrap;
+  /* luôn ở cùng dòng */
   font-size: 14px;
   color: var(--color-muted);
   text-align: right;
@@ -724,6 +766,7 @@ li {
   padding: 20px;
   box-sizing: border-box;
 }
+
 .dashboard-cards-2 .dashboard-chart-row {
   grid-column: 1 / -1;
   display: grid;
