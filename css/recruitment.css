@@ -511,6 +511,20 @@ li {
   color: #000;
 }
 
+.candidate-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.candidate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-card summary:hover {
+  background-color: #0b79d1;
+  /* màu đậm hơn một chút */
+}
+
 .candidate-card summary {
   list-style: none;
   cursor: pointer;
@@ -601,7 +615,7 @@ li {
 .filter-panel {
   background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
@@ -612,6 +626,7 @@ li {
   color: #086db5;
   margin-bottom: 16px;
 }
+
 .filter-panel h4 i {
   margin-right: 8px;
   font-size: 1.4rem;
@@ -621,11 +636,13 @@ li {
 .filter-panel .filter-group {
   margin-bottom: 16px;
 }
+
 .filter-panel .filter-group label {
   display: block;
   font-weight: 500;
   margin-bottom: 6px;
 }
+
 .filter-panel .filter-group input,
 .filter-panel .filter-group select {
   width: 100%;
@@ -635,6 +652,7 @@ li {
   font-size: 0.95rem;
   transition: border-color .2s;
 }
+
 .filter-panel .filter-group input:focus,
 .filter-panel .filter-group select:focus {
   outline: none;
@@ -642,16 +660,18 @@ li {
 }
 
 /* checkbox nhóm */
-.filter-panel > .filter-group:nth-of-type(3) {
+.filter-panel>.filter-group:nth-of-type(3) {
   display: flex;
   flex-direction: column;
 }
-.filter-panel > .filter-group:nth-of-type(3) div {
+
+.filter-panel>.filter-group:nth-of-type(3) div {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
-.filter-panel > .filter-group:nth-of-type(3) input {
+
+.filter-panel>.filter-group:nth-of-type(3) input {
   margin-right: 8px;
   width: 16px;
   height: 16px;
@@ -670,6 +690,7 @@ li {
   cursor: pointer;
   transition: background .2s;
 }
+
 .filter-panel .btn-apply-filter:hover {
   background-color: #06549e;
 }
@@ -678,7 +699,7 @@ li {
 .candidate-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;  
+  gap: 12px;
   display: grid;
   padding: 0;
 }
@@ -771,7 +792,7 @@ li {
 .stats-panel {
   background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
@@ -782,6 +803,7 @@ li {
   color: var(--color-primary);
   margin-bottom: 16px;
 }
+
 .stats-panel h4 i {
   margin-right: 8px;
   font-size: 1.3rem;
@@ -791,12 +813,14 @@ li {
   text-align: center;
   margin-bottom: 20px;
 }
+
 .stat-card .stat-value {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-primary);
   line-height: 1;
 }
+
 .stat-card .stat-label {
   font-size: 1rem;
   color: #555;
@@ -806,17 +830,20 @@ li {
 .upcoming-interviews {
   margin-top: 8px;
 }
+
 .upcoming-interviews h5 {
   font-size: 1rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 8px;
 }
+
 .upcoming-interviews ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .upcoming-interviews li {
   position: relative;
   padding-left: 16px;
@@ -824,6 +851,7 @@ li {
   font-size: 0.95rem;
   color: #333;
 }
+
 .upcoming-interviews li::before {
   content: "•";
   color: var(--color-primary);
@@ -899,5 +927,3 @@ li {
   padding: 10px 20px;
   font-size: 13px;
 }
-
-

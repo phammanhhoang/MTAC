@@ -617,24 +617,17 @@ li {
   color: #ffa500;
 }
 
-/* ==== CHUYỂN REM → PX CHO PIE + REMINDER ==== */
-/* chung cho tất cả .card */
-/* ==== Hover effect cho các chart-card và dashboard-card ==== */
 .dashboard-main .dashboard-card,
 .dashboard-cards-2 .chart-card {
-  /* thêm transition mượt mà */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dashboard-main .dashboard-card:hover,
 .dashboard-cards-2 .chart-card:hover {
-  /* nâng lên 4px */
   transform: translateY(-4px);
-  /* đổ shadow đậm hơn */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* ==== Hover effect cho khối Tổng số nhân viên ==== */
 .dashboard-stats {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -656,7 +649,6 @@ li {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* tiêu đề card */
 .dashboard-cards-2 .card h3 {
   font-size: 20px;
   color: var(--color-dark);
@@ -664,14 +656,12 @@ li {
   font-weight: 600;
 }
 
-/* dòng phụ (period) */
 .dashboard-cards-2 .card .period {
   font-size: 14px;
   color: var(--color-grey);
   margin-bottom: 16px;
 }
 
-/* chart-card */
 .dashboard-cards-2 .chart-card {
   background: var(--color-white);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -681,21 +671,18 @@ li {
   height: 387px;
 }
 
-/* tiêu đề chart */
 .dashboard-cards-2 .chart-card h3 {
   font-size: 18px;
   color: var(--color-primary);
   margin-bottom: 6px;
 }
 
-/* dòng thời gian */
 .dashboard-cards-2 .chart-card .period {
   font-size: 14px;
   color: var(--color-muted);
   margin-bottom: 12px;
 }
 
-/* legend dưới chart */
 .dashboard-cards-2 .chart-card .legend {
   margin-top: 12px;
   display: flex;
