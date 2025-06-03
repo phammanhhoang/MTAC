@@ -206,16 +206,12 @@ li {
   color: #333;
 }
 
-
-
-/* Container */
 .language-switcher {
   position: relative;
   display: inline-block;
   font-family: Arial, sans-serif;
 }
 
-/* Pill-style button */
 .lang-btn {
   display: inline-flex;
   align-items: center;
@@ -233,7 +229,6 @@ li {
   background: #f5f5f5;
 }
 
-/* Flag icon inside button */
 .lang-btn .flag {
   width: 18px;
   height: 12px;
@@ -335,7 +330,6 @@ li {
   z-index: 1000;
 }
 
-
 .breadcrumb-bar {
   display: flex;
   justify-content: space-between;
@@ -367,7 +361,6 @@ li {
   background: #086db5;
 }
 
-/* --- Bố cục chính: sidebar + content --- */
 .main-content-wrapper {
   display: flex;
 }
@@ -391,8 +384,6 @@ li {
 .sidebar.collapsed .menu li span {
   display: none;
 }
-
-
 
 .menu {
   list-style: none;
@@ -423,7 +414,6 @@ li {
 }
 
 .menu li span {
-  /* chuyển động ẩn/hiện text */
   transition: opacity 0.3s ease, margin 0.3s ease;
 }
 
@@ -465,7 +455,7 @@ li {
 }
 
 .candidate-section {
-  padding: 5px;
+  padding: 10px;
 }
 
 .candidate-section h2 {
@@ -520,26 +510,6 @@ li {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.candidate-card summary:hover {
-  background-color: #0b79d1;
-  /* màu đậm hơn một chút */
-}
-
-.candidate-card summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #086db5;
-  color: #fff;
-}
-
-.candidate-card summary::-webkit-details-marker {
-  display: none;
-}
-
 .candidate-card .title {
   font-weight: bold;
   display: flex;
@@ -565,167 +535,147 @@ li {
   border-bottom: 1px solid #ddd;
 }
 
-.card-body {
-  padding: 12px 16px;
-}
-
-.info-list {
-  margin: 0 0 12px 0;
-  padding: 0 0 0 18px;
-}
-
-.info-list li {
-  margin-bottom: 6px;
-  font-size: 0.95em;
-  color: #333;
-}
-
-.status-steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.status-steps .step {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.85em;
-}
-
-.status-steps .completed {
-  background: #e0f4ff;
-  color: #086db5;
-}
-
-.status-steps .pending {
-  background: #f5f5f5;
-  color: #777;
-}
-
-
-/* ==== GRID CHÍNH ==== */
-.content-grid {
-  display: grid;
-  grid-template-columns: 250px 1fr 250px;
-  gap: 20px;
-}
-
-/* --- 1) FILTER PANEL --- */
-/* --- Style cho Filter Panel --- */
-.filter-panel {
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.filter-panel h4 {
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  color: #086db5;
-  margin-bottom: 16px;
-}
-
-.filter-panel h4 i {
-  margin-right: 8px;
-  font-size: 1.4rem;
-}
-
-/* label và input */
-.filter-panel .filter-group {
-  margin-bottom: 16px;
-}
-
-.filter-panel .filter-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.filter-panel .filter-group input,
-.filter-panel .filter-group select {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  transition: border-color .2s;
-}
-
-.filter-panel .filter-group input:focus,
-.filter-panel .filter-group select:focus {
-  outline: none;
-  border-color: #086db5;
-}
-
-/* checkbox nhóm */
-.filter-panel>.filter-group:nth-of-type(3) {
-  display: flex;
-  flex-direction: column;
-}
-
-.filter-panel>.filter-group:nth-of-type(3) div {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.filter-panel>.filter-group:nth-of-type(3) input {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-}
-
-/* nút Áp dụng */
-.filter-panel .btn-apply-filter {
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-  background-color: #086db5;
-  color: #fff;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background .2s;
-}
-
-.filter-panel .btn-apply-filter:hover {
-  background-color: #06549e;
-}
-
-/* --- 2) CANDIDATE LIST --- */
-.candidate-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  display: grid;
-  padding: 0;
-}
-
-/* Card */
-.candidate-card {
-  background: #086db5;
-  overflow: hidden;
-  color: #fff;
-  transition: background 0.2s;
-  border: 1px solid #ddd;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.candidate-card[open] {
-  background: #0b79d1;
+.recruitment-card {
+  background: var(--color-white);
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+}
+
+.search-group {
+  position: relative;
+}
+
+.search-group input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 30px 6px 8px;
+  width: 254px;
+  font-size: 0.9rem;
+}
+
+.search-group button {
+  padding: 6px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
   cursor: pointer;
+  color: var(--color-grey);
+}
+
+.card-actions>button:not(.btn-add) {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--color-grey);
+  padding: 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.card-actions>button:not(.btn-add):hover {
+  background: #f0f0f0;
+}
+
+.btn-add {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.btn-add i {
+  font-size: 0.9rem;
+}
+
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.recruitment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.recruitment-table th,
+.recruitment-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.recruitment-table th {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: left;
+}
+
+.recruitment-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.recruitment-table td:first-child,
+.recruitment-table th:first-child {
+  text-align: center;
+  width: 40px;
+}
+
+.cv-cell {
+  text-align: center;
+  width: 60px;
+}
+
+.btn-cv {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  transition: color 0.2s;
+}
+
+.btn-cv:hover {
+  color: var(--color-dark);
 }
 
 .card-header .title {
@@ -755,111 +705,30 @@ li {
   padding: 12px 16px;
 }
 
-.info-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 12px;
-}
-
-.info-list li {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.status-steps {
+.card-actions {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
 }
 
-.status-steps .step {
-  font-size: 13px;
-  padding: 4px 6px;
+.card-actions>button:not(.btn-add) {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--color-grey);
+  padding: 6px;
   border-radius: 4px;
+  transition: background 0.2s;
 }
 
-.status-steps .completed {
-  background: #e0f2ff;
-  color: #086db5;
-}
-
-.status-steps .pending {
+.card-actions>button:not(.btn-add):hover {
   background: #f0f0f0;
-  color: #777;
 }
 
-/* --- 3) STATS PANEL --- */
-.stats-panel {
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+.btn-cv:hover {
+  color: var(--color-dark);
 }
-
-.stats-panel h4 {
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  color: var(--color-primary);
-  margin-bottom: 16px;
-}
-
-.stats-panel h4 i {
-  margin-right: 8px;
-  font-size: 1.3rem;
-}
-
-.stat-card {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.stat-card .stat-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1;
-}
-
-.stat-card .stat-label {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 4px;
-}
-
-.upcoming-interviews {
-  margin-top: 8px;
-}
-
-.upcoming-interviews h5 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-.upcoming-interviews ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.upcoming-interviews li {
-  position: relative;
-  padding-left: 16px;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.upcoming-interviews li::before {
-  content: "•";
-  color: var(--color-primary);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 
 .footer {
   background-color: #fff;
@@ -927,3 +796,4 @@ li {
   padding: 10px 20px;
   font-size: 13px;
 }
+

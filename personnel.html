@@ -104,56 +104,45 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="content-section active" data-section="applicant-files">
-                        <div class="main-content">
-                            <div class="dashboard-main">
-                                <div class="dashboard-card">
-                                    <h3>Nhân viên mới</h3>
-                                    <div class="value">8 <span class="delta">(+33.3%)</span></div>
-                                    <div class="period">Tuần này: 2</div>
-                                    <div class="previous">Tuần trước: 6</div>
-                                    <div class="sparkline-container">
-                                        <canvas id="sparkNV" style="height:50px;"></canvas>
-                                    </div>
+                        <div class="overview-section">
+                            <div class="ov-card ov-working">
+                                <h4>Đang làm việc</h4>
+                                <div class="ov-number">40</div>
+                            </div>
+                            <div class="classification-card">
+                                <div class="classification-header">
+                                    <span class="title">Phân loại theo:</span>
+                                    <span class="value">Giới tính</span>
                                 </div>
-
-                                <div class="dashboard-card">
-                                    <h3>Thử việc thành công</h3>
-                                    <div class="value">5 <span class="delta">(+66.7%)</span></div>
-                                    <div class="period">Tuần này: 2</div>
-                                    <div class="previous">Tuần trước: 3</div>
-                                    <div class="sparkline-container">
-                                        <canvas id="sparkTV" style="height:50px;"></canvas>
+                                <div class="classification-body">
+                                    <div class="classification-chart">
+                                        <canvas id="catChart"></canvas>
                                     </div>
-                                </div>
-
-                                <div class="dashboard-card">
-                                    <h3>Nghỉ việc</h3>
-                                    <div class="value">2 <span class="delta">(-20.0%)</span></div>
-                                    <div class="period">Tuần này: 0</div>
-                                    <div class="previous">Tuần trước: 2</div>
-                                    <div class="sparkline-container">
-                                        <canvas id="sparkNVL" style="height:50px;"></canvas>
-                                    </div>
+                                    <ul class="classification-legend">
+                                        <li><span class="count green">10</span> Nam</li>
+                                        <li><span class="count red">29</span> Nữ</li>
+                                        <li><span class="count blue">01</span> Không xác định</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="dashboard-stats">
-                                <h3>Tổng số nhân viên</h3>
-                                <div class="stats-count">30</div>
-                                <ul class="stats-list">
-                                    <li><i class="fas fa-user-tie icon formal"></i><span>Chính
-                                            thức</span><span>15</span></li>
-                                    <li><i class="fas fa-user-clock icon intern"></i><span>Thử
-                                            việc</span><span>7</span></li>
-                                    <li><i class="fas fa-baby icon maternity"></i><span>Nghỉ thai
-                                            sản</span><span>2</span></li>
-                                    <li><i class="fas fa-users icon others"></i><span>Khác</span><span>6</span>
-                                    </li>
-                                </ul>
+                            <div class="ov-card ov-status ov-probation">
+                                <h5>Thử việc</h5>
+                                <div class="ov-value">5</div>
+                            </div>
+                            <div class="ov-card ov-status ov-official">
+                                <h5>Chính thức</h5>
+                                <div class="ov-value">32</div>
+                            </div>
+                            <div class="ov-card ov-status ov-maternity">
+                                <h5>Nghỉ thai sản</h5>
+                                <div class="ov-value">2</div>
+                            </div>
+                            <div class="ov-card ov-status ov-other">
+                                <h5>Khác</h5>
+                                <div class="ov-value">1</div>
                             </div>
                         </div>
-
                         <div class="dashboard-cards-2">
                             <div class="card pie-card">
                                 <h3>Cơ cấu nhân sự phòng ban</h3>
@@ -184,18 +173,12 @@
                                             class="rem-due">28/05/2025</span></li>
                                 </ul>
                             </div>
-
-                            <!-- ===== hai chart lớn phía dưới ===== -->
                             <div class="dashboard-chart-row">
                                 <div class="chart-card">
                                     <h3>Biến động nhân sự</h3>
                                     <div class="period">Tất cả đơn vị – Năm 2025</div>
                                     <div class="chart-container">
                                         <canvas id="staffMovementChart"></canvas>
-                                    </div>
-                                    <div class="legend">
-                                        <span><i class="fas fa-circle text-blue"></i> Tiếp nhận</span>
-                                        <span><i class="fas fa-circle text-red"></i> Nghỉ việc</span>
                                     </div>
                                 </div>
                                 <div class="chart-card">
@@ -227,7 +210,6 @@
             </div>
     </div>
     </div>
-
     </section>
 
 

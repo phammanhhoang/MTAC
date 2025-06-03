@@ -35,18 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // 3. Submenu toggle (nếu có): cho các mục có .submenu
-  document.querySelectorAll('.sidebar .menu li').forEach(item => {
-    const sub = item.querySelector('.submenu');
-    if (sub) {
-      item.addEventListener('click', e => {
-        e.stopPropagation();
-        item.classList.toggle('active');
-      });
-    }
-  });
-
-
   // 4. Sidebar menu navigation: chuyển section chính giữa
   document.querySelectorAll('.sidebar .menu li').forEach(item => {
     item.addEventListener('click', () => {
@@ -176,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
-
   // 8. Sparkline charts – 3 mini-line trong 3 card đầu
   const labelsWeek = ['T1','T2','T3','T4','T5','T6','T7'];
 
@@ -285,8 +272,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
-}); // end DOMContentLoaded
+});
 
-// ————————————————
-// Đã xóa toàn bộ code sparkline chạy ngoài DOMContentLoaded.
-// File giờ chỉ còn những phần thực sự dùng đến.
+const ctx = document.getElementById('catChart').getContext('2d');
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Nam','Nữ','Không xác định'],
+    datasets: [{
+      data: [10, 29, 1], 
+      backgroundColor: ['#4CAF50','#F44336','#2979FF'],
+      hoverOffset: 4
+    }]
+  },
+  options: {
+    cutout: '80%',
+    plugins: {
+      legend: { display: false }
+    },
+    maintainAspectRatio: false
+  }
+});

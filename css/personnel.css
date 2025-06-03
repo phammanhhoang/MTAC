@@ -350,7 +350,7 @@ li {
 }
 
 .sidebar {
-  transition: width 0.3s ease;
+  flex: 0 0 240px;
   overflow: hidden;
   width: 240px;
   min-height: 100vh;
@@ -359,17 +359,21 @@ li {
   background: #086db5;
 }
 
+.sidebar.collapsed {
+  transition: width 0.3s ease;
+  flex: 0 0 60px;
+  width: 60px;
+}
+
 .main-content-wrapper {
   display: flex;
 }
 
-/* Cho toàn bộ content-section chiếm toàn bộ không gian còn lại khi sidebar co lại */
 .main-content-wrapper .content-section {
-  /* flex items mặc định là flex: 0 1 auto, nên cần override để grow */
   flex: 1 1 auto;
+  overflow-x: hidden;
 }
 
-/* Đồng thời đảm bảo khi active vẫn display block */
 .main-content-wrapper .content-section.active {
   display: block;
 }
@@ -377,26 +381,23 @@ li {
 .content-section.active {
   flex: 1 1 auto;
   display: block;
-  /* giữ nguyên */
 }
 
 .main-content {
+  width: 100%;
   margin: 15px;
   display: grid;
   grid-template-columns: 1fr 300px;
-
 }
 
 .content-section {
   display: none;
 }
 
-/* Chỉ show section đang active */
 .content-section.active {
   display: block;
 }
 
-/* ba card chỉ số trên cùng */
 .content-section.active .dashboard {
   display: flex;
   gap: 20px;
@@ -410,7 +411,6 @@ li {
   display: flex;
   gap: 20px;
 }
-
 
 .menu {
   list-style: none;
@@ -442,7 +442,6 @@ li {
 }
 
 .menu li span {
-  /* chuyển động ẩn/hiện text */
   transition: opacity 0.3s ease, margin 0.3s ease;
 }
 
@@ -557,7 +556,7 @@ li {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  width: 280px;
+  width: 234px;
   grid-column: 2 / span 1;
   margin-top: 5px;
   background: #fff;
@@ -691,7 +690,6 @@ li {
   align-items: center;
 }
 
-/* === Reminder-card cải tiến === */
 .reminder-card {
   padding: 24px 20px;
 }
@@ -724,27 +722,20 @@ li {
 
 .rem-text {
   flex: 1;
-  /* chiếm hết không gian còn lại */
   font-weight: 500;
   color: #333;
   margin-right: 16px;
-  /* khoảng cách đến ngày */
   word-break: break-word;
-  /* xuống dòng nếu quá dài */
 }
 
 .rem-due {
   flex-shrink: 0;
-  /* không bị co lại */
   white-space: nowrap;
-  /* luôn ở cùng dòng */
   font-size: 14px;
   color: var(--color-muted);
   text-align: right;
 }
 
-
-/* layout grid */
 .dashboard-cards-2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -761,22 +752,213 @@ li {
   gap: 20px;
 }
 
-/* ---- điều chỉnh kích thước cho 2 chart lớn ---- */
 .dashboard-cards-2 .dashboard-chart-row .chart-card .chart-container {
-  /* ví dụ: ép cao 320px */
   height: 320px;
-  /* chiều rộng đã mặc định 100% của column, nếu bạn muốn cụ thể: */
-  /* width: 100%; */
 }
 
-/* bắt buộc canvas fill đầy wrapper */
 .dashboard-cards-2 .dashboard-chart-row .chart-card .chart-container canvas {
   width: 100% !important;
   height: 100% !important;
 }
 
+.ov-working {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-/* ==== FOOTER ==== */
+.ov-working::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, transparent 60px, rgba(0, 0, 0, 0.06) 60px, transparent 61px),
+    radial-gradient(circle, transparent 40px, rgba(0, 0, 0, 0.06) 40px, transparent 41px);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.ov-working h4,
+.ov-working .ov-number {
+  position: relative;
+  z-index: 2;
+}
+
+.ov-working h4 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.ov-working .ov-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.classification-legend .count.green {
+  background-color: #00a711;
+}
+
+.classification-legend .count.red {
+  background-color: #ef4545;
+}
+
+.classification-legend .count.blue {
+  background-color: #0083db;
+}
+
+.ov-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ov-status h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ov-status .ov-value {
+  font-size: 2rem;
+}
+
+.ov-probation {
+  grid-column: 3;
+  grid-row: 1;
+  background: linear-gradient(90deg, #00c9a7 0%, #00e4ff 100%);
+}
+
+.ov-official {
+  grid-column: 4;
+  grid-row: 1;
+  background: linear-gradient(90deg, #36d1dc 0%, #5b86e5 100%);
+}
+
+.ov-maternity {
+  grid-column: 3;
+  grid-row: 2;
+  background: linear-gradient(90deg, #7e57c2 0%, #b39ddb 100%);
+}
+
+.ov-other {
+  grid-column: 4;
+  grid-row: 2;
+  background: linear-gradient(90deg, #f9d423 0%, #fb8c00 100%);
+}
+
+.overview-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, 90px);
+  gap: 15px;
+  margin: 20px 20px 0px 20px;
+}
+
+.classification-card {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ov-status.ov-probation {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.ov-status.ov-official {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.ov-status.ov-maternity {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.ov-status.ov-other {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.classification-card .classification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 151px;
+}
+
+.classification-card .classification-body {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.classification-chart {
+  flex: 1;
+  display: block;
+  box-sizing: border-box;
+  height: 126px;
+  width: 203px;
+}
+
+.classification-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.classification-legend li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.classification-legend .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.count.green {
+  background: #4e79a7;
+}
+
+.count.red {
+  background: #f28e2c;
+}
+
+.count.blue {
+  background: #36a2eb;
+}
+
 .footer {
   background-color: #fff;
   padding: 40px 20px;

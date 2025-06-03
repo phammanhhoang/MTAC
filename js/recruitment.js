@@ -36,34 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // === 4. Submenu toggle (nếu có) ===
+  // === 4. Menu item click: active + show content section ===
   document.querySelectorAll('.sidebar .menu li').forEach(item => {
-    const sub = item.querySelector('.submenu');
-    if (!sub) return;
     item.addEventListener('click', e => {
-      e.stopPropagation();
-      item.classList.toggle('active');
+      // 1) active menu
+      document.querySelectorAll('.sidebar .menu li')
+        .forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      // 2) show corresponding content-section
+      const name = item.dataset.section;
+      document.querySelectorAll('.content-section')
+        .forEach(sec => sec.classList.remove('active'));
+      const target = document.querySelector(`.content-section[data-section="${name}"]`);
+      if (target) target.classList.add('active');
     });
   });
 
-
-document.querySelectorAll('.sidebar .menu li').forEach(item => {
-  item.addEventListener('click', e => {
-    // 1) active menu
-    document.querySelectorAll('.sidebar .menu li')
-      .forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-
-    // 2) show content
-    const name = item.dataset.section;
-    document.querySelectorAll('.content-section')
-      .forEach(sec => sec.classList.remove('active'));
-    const target = document.querySelector(`.content-section[data-section="${name}"]`);
-    if (target) target.classList.add('active');
-  });
-});
-
-  // === 5. Language switcher (pill + cờ) ===
+  // === 5. Language switcher ===
   const switcher = document.querySelector('.language-switcher');
   if (switcher) {
     const btn  = switcher.querySelector('.lang-btn');
@@ -88,11 +78,11 @@ document.querySelectorAll('.sidebar .menu li').forEach(item => {
         const label   = li.textContent.trim();
 
         // cập nhật lại button
-        switcher.querySelector('.lang-btn .flag').src    = flagSrc;
-        switcher.querySelector('.lang-btn .label').textContent = label;
+        switcher.querySelector('.lang-btn .flag').src              = flagSrc;
+        switcher.querySelector('.lang-btn .label').textContent     = label;
         switcher.classList.remove('open');
 
-        // TODO: reload hoặc gọi API chuyển ngôn ngữ
+        // TODO: nếu cần reload hay gọi API chuyển ngôn ngữ
         // window.location.href = '/?lang=' + li.dataset.lang;
       });
     });
