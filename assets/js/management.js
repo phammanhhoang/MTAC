@@ -114,7 +114,7 @@ function toggleSidebar() {
 
   sidebar.classList.toggle('collapsed');
   if (sidebar.classList.contains('collapsed')) {
-    btnIcon.classList.replace('fa-angle-left', 'fa-angle-right');
+    btnIcon.classList.replace('fa-angle-right', 'fa-angle-left');
     btnText.textContent = '';
   } else {
     btnIcon.classList.replace('fa-angle-right', 'fa-angle-left');
