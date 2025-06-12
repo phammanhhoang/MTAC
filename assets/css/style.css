@@ -731,11 +731,6 @@ li {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.news-card h3,
-.news-card p {
-  margin: 0;
-}
-
 .news-card:hover {
   cursor: pointer;
   transform: translateY(-4px);
@@ -743,16 +738,16 @@ li {
 }
 
 .card-title {
+  margin-bottom: 2px;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 8px;
   color: #086db5;
 }
 
 .card-date {
   font-size: 0.85rem;
   color: #777;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
 }
 
 .card-text {

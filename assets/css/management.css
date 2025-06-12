@@ -959,6 +959,92 @@ li {
   background: #36a2eb;
 }
 
+.view-more-wrapper {
+    text-align: center;
+    margin: 5px;
+}
+
+.view-more-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Bảng */
+.candidate-table {
+  padding: 7px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  background-color: #f7f7f7;
+    overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Header bảng */
+.candidate-table thead {
+  background-color: #4e73df;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Ô bảng */
+.candidate-table th,
+.candidate-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f1f6;
+  vertical-align: middle;
+  transition: background-color 0.2s;
+}
+
+/* Dòng xen kẽ màu nền */
+.candidate-table tbody tr:nth-child(even) {
+  background-color: #f8f9fc;
+}
+
+/* Hover */
+.candidate-table tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+/* Cột tên nhân viên */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* Avatar tròn có gradient */
+.avatar {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #4e73df, #6c63ff);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(78, 115, 223, 0.4);
+}
+
 .footer {
   background-color: #fff;
   padding: 40px 20px;
